@@ -18,6 +18,7 @@ def bigKeysGetFromRedisServer(redisAddr):
     port = int(redisAddr.strip('\"').split(':')[1].strip())
     print(redisAddr+' start')
     rd = redis.Redis(host, port, 0)
+    total = keys1w = 0
     keys = rd.keys("*")
     total += len(keys)
     for k in keys:
